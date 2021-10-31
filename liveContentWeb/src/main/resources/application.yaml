@@ -1,0 +1,30 @@
+server:
+  port: 9201
+  tomcat:
+    accesslog:
+      directory: ${log.file.path:./logs}
+      enabled: true
+      max-days: 7
+spring:
+  application:
+    name: liveContent
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 30MB
+  task:
+    execution:
+      pool:
+        queue-capacity: 1000
+    scheduling:
+      pool:
+        size: 8
+      thread-name-prefix: scheduling-
+
+logging:
+  config: classpath:log/logback-spring.xml
+  file:
+    path: ${log.file.path:./logs}
+
