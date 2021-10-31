@@ -21,7 +21,7 @@ public class BpTestController {
 
 
     @GetMapping("/t1")
-//    @ApiOperation(value = "t1", notes = "t1")
+//    @ApiOperation(value = "t1",  notes = "t1")
     public String toyBrandList() {
         return bpBiz.get1();
     }
